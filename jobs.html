@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html style="" class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-store">
+
+<script src="jobs_files/analytics.js" async=""></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-51193553-1', 'jobsbank.gov.sg');
+  ga('send', 'pageview');
+
+</script>
+
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Jobs Bank | A one-stop jobs resource</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="jobs_files/normalize.css">
+<link rel="stylesheet" href="jobs_files/main.css">
+<style type="text/css" media="all">@import url("/ICMSPortal/resources/JobsBank2/fonts/helvetica-neue.css");</style>
+<script src="jobs_files/modernizr-2.js"></script>
+<script src="jobs_files/jquery-1.js"></script>
+</head>
+<body>
+ <script>
+
+ var fontSizeCount=0;
+ function increaseFontSize(objId,limit) {
+
+  
+ if(fontSizeCount<limit){
+ 	
+ 	fontSizeCount++;
+ 	$("."+objId).css('font-size','+='+1+'px', 'important');
+
+ }
+ }
+ function decreaseFontSize(objId,limit) {
+
+ if(fontSizeCount > 0 ){
+ 	
+ 	
+ 	$("."+objId).css('font-size','-='+(1)+'px', 'important');
+ 		fontSizeCount--;
+ 	 
+  }
+
+ }
+
+ function isCSS(s)
+ {
+     var len = s.length;
+     var i;
+     var strVal = "";
+
+     s = s.replace("(","%28");
+     s = s.replace(")","%29");
+     s = s.replace("<","&lt");
+     s = s.replace(">","&gt");
+
+     return s;
+
+ }
+
+ function checkCSS()
+ {
+     var strNewVals = isCSS(document.getElementById("search").value);
+     document.getElementById("search").value = strNewVals;
+     return true;
+ }
+
+
+ function callSaveValue()
+ {
+
+     if(checkCSS())
+         return true;
+       
+ }
+
+ 
+</script>
+
+<style type="text/css">
+span.keyDiv  {
+
+    vertical-align: bottom;
+		display: inline-block;
+		max-width: 80%;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+}
+form.formClass  {
+
+    vertical-align: bottom;
+		display: inline-block;
+		max-width: 80%;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+}
+a.decrease:hover{ 
+	
+	color:black;
+}
+
+a.increase{
+	color:#FFF;
+	font-weight:bold;
+}
+
+.selectVal{
+	color: #999999;
+	font-size: 11px;
+}
+</style>
+	
+<div id="wrapper">
+
+   
+
+
+ 
+
+ 
+ 
+
+	<div class="main">
+		<div class="content homepage">
+			<div class="homepageRight">
+			<form name="Search" id="Search" action="https://www.jobsbank.gov.sg:/ICMSPortal/portlets/JobBankHandler/SearchResult.do" method="post">
+			<input name="{actionForm.checkValidRequest}" value="YES" type="hidden">
+			<input id="selectedCategory" name="{pageFlow.selectedCategory}" value="CATEGORY" type="hidden">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+// lookup by tagId to "real id"
+function lookupIdByTagId(id, tag)
+{
+   var idScope = lookupIdScope(tag,".");
+   return (idScope == "") ? id : idScope + id;
+}
+
+//Non-Legacy lookup method creating a fully qualified scope id
+function lookupIdScope(tag,sep)
+{
+   var val = "";
+   if (sep == null) sep = "";
+   while (tag != null && tag.getAttribute != null) {
+      try {
+         var attrVal = tag.getAttribute("netui:idScope");
+      } catch (e) { /* ignore, in IE6 calling on a table results in an exception */ }
+      if (attrVal != null)
+         val = attrVal + sep + val;
+      tag = tag.parentNode;
+   }
+   return val;
+}
+
+
+// map tagId to "real name"
+if (netui_tagIdNameMap == null)
+   var netui_tagIdNameMap = new Object();
+netui_tagIdNameMap.selectedCategory="{pageFlow.selectedCategory}"
+// lookup by tagId to "real name"
+function lookupNameByTagId(id, tag)
+{
+   var idScope = lookupIdScope(tag,"_");
+   if (idScope == "")
+      return netui_tagIdNameMap[id];
+   else
+      return netui_tagIdNameMap[idScope  + "__" + id];
+}
+
+-->
+</script>
+
+			<input id="selectedEmpCategory" name="{pageFlow.selectedEmpCategory}" value="" type="hidden">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+netui_tagIdNameMap.selectedEmpCategory="{pageFlow.selectedEmpCategory}"
+-->
+</script>
+
+			<input id="selectedIndex" name="{pageFlow.selectedIndex}" value="" type="hidden">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+netui_tagIdNameMap.selectedIndex="{pageFlow.selectedIndex}"
+-->
+</script>
+
+				
+				<div class="jobCounter" style="text-align: center;">
+					MORE THAN <br> 
+					<span class="numberCount"> 
+							<a href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="text" title="Click to view all jobs" onclick="anchor_submit_form('Search','https://www.jobsbank.gov.sg:/ICMSPortal/portlets/JobBankHandler/SearchResult.do');return false;" onmousedown="$('#search').val('')">0</a>
+<script language="JavaScript" type="text/JavaScript">
+<!--
+// submit the form from an Anchor or ImageAnchor
+// Search for the form by actionName,
+// Replace the action with the passed in action
+// Submit the form
+function anchor_submit_form(netuiName, newAction)
+{
+  for (var i=0; i<document.forms.length; i++) {
+     if (document.forms[i].id == netuiName) {
+        document.forms[i].method = "POST";
+        document.forms[i].action = newAction;
+        document.forms[i].submit();
+     }
+   }
+}
+-->
+</script>
+ 
+					 </span><br>
+					JOBS AVAILABLE
+					 </div>
+					 
+				</form>
+<script language="JavaScript" type="text/JavaScript">
+<!--
+netui_tagIdNameMap.Search="Search"
+-->
+</script>
+
+				<div class="sliderButton">
+					<label for="Register/login" class="text" style="text-align:left; padding-right: 43px;font-weight: bold; ">Register/Login</label>
+					<a href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/individual.jsp" title="Individual Login"><img title="Individual Login" alt="Individual Login" src="jobs_files/btn-jobseeker.jpg"></a>
+					<a href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/employer.jsp" title="Employer Login"><img title="Employer Login" alt="Employer Login" src="jobs_files/btn-employer.jpg"></a>
+				</div>
+			</div>
+			<div class="homepageLeft">
+				<h1 class="text" style="margin-bottom: 15px;">A one-stop <br>jobs resource</h1>
+				<p class="text" style="margin: 5px 0px 5px 0px;">Welcome to <strong>Jobs Bank</strong>, the public platform to facilitate job matching between local individuals and employers.</p>
+			</div>
+				
+		</div>
+	</div>
+	
+	<div class="clear"></div>
+	
+	<div class="nav" style="display: block;">
+		<div class="content">
+			<div class="navContentLeft">
+				<ul>
+					<li class="text"><a href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/Home.do" title="Home"><img alt="home" data-img="nav-icon-home" title="Home" src="jobs_files/nav-icon-home_h.jpg"></a><p>HOME<a href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/Home.do"></a></p></li>
+					<li class="text"><a href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/IndividualDetails.jsp" alt="For Individuals" title="For Individuals"><img alt="For Individuals" data-img="nav-icon-jobseekers" title="For Individuals" src="jobs_files/nav-icon-jobseekers.jpg"></a><p>FOR<br>INDIVIDUALS<a href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/IndividualDetails.jsp"></a></p></li>
+					<li class="text"><a href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/EmployerDetails.jsp" alt="For Employers" title="For Employers"><img alt="For Employers" data-img="nav-icon-employers" title="For Employers" src="jobs_files/nav-icon-employers.jpg"></a><p>FOR<br>EMPLOYERS<a href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/EmployerDetails.jsp"></a></p></li>
+					<li class="text"><a href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/AboutJobsBank/AboutJobsBank.jsp" alt="About Jobs Bank" title="About Jobs Bank"><img alt="About Jobs Bank" data-img="nav-icon-about" src="jobs_files/nav-icon-about.jpg"></a><p>ABOUT<br>JOBS BANK<a href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/AboutJobsBank/AboutJobsBank.jsp"></a></p></li>
+					<li class="text"><a href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/AboutJobsBank/FAQ.jsp" alt="FAQ / User Guides" title="FAQ / User Guides"><img alt="FAQ / User Guides" data-img="nav-icon-faq" src="jobs_files/nav-icon-faq.jpg"></a><p>FAQ/<br>USER GUIDES<a href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/AboutJobsBank/FAQ.jsp"></a></p></li>
+				</ul>
+			</div>
+		
+			<div class="navContentRight" style="margin-top:37px;">
+				
+				<form name="Search" id="Search" action="https://www.jobsbank.gov.sg:/ICMSPortal/portlets/JobBankHandler/SearchResult.do" method="post">
+					
+					<label for="search">Search for a job</label>
+					<div class="searchBar">
+						
+						<input onclick="callSaveValue();CheckVal();" type="submit">
+						 
+						<div class="searchField" style="height: 27px">
+							<input name="{actionForm.checkValidRequest}" value="YES" type="hidden">
+							<input name="{actionForm.keyWord}" id="search" class="selectVal" value="Enter job title" onblur="return placeHoldBlur()" onfocus="return placeHold()" type="text">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+netui_tagIdNameMap.search="{actionForm.keyWord}"
+-->
+</script>
+
+						</div>
+						
+					
+						<a href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/AdvancedSearch.do" class="text">ADVANCED SEARCH</a>
+					</div>
+				</form>
+<script language="JavaScript" type="text/JavaScript">
+<!--
+netui_tagIdNameMap.Search="Search"
+-->
+</script>
+
+					
+			</div>
+			<div class="navContentRight" style="height: 4px;margin-top: -14px;">
+				<div style="float:right"> 
+					 
+						<label class="fontSize" for="Decrease Font" style="font-size:1em; color:#FFF;">[&nbsp;<a href="javascript:decreaseFontSize('text',2);" class="decrease" style="color:#FFF;">A<sup>-</sup></a>&nbsp;]</label>
+						<label class="fontSize" for="Increase Font" style="font-size:1.5em;font-weight: bold;color:#FFF;">[&nbsp;<a href="javascript:increaseFontSize('text',2);" class="increase" style="color:#FFF;">A<sup>+</sup></a>&nbsp;]</label>
+					 
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="main">
+		<div class="content">
+			<div class="frameBrowseJobs">
+				<div class="frameTabs">
+					<ul>
+						<li style="width:auto;" onclick="$('#employerFilters').hide();toggleFrame('category');setCategory('CATEGORY');makeAjaxCall('category','','');$('.pagination').hide();" id="frame_category" class="selected"><span class="text" style="padding-right:10px">Job Category</span></li>
+						<!-- <li style="width:auto;" onClick="$('#employerFilters').show();toggleFrame('industry');loadAlphabets();setCategory('EMPLOYER');makeAjaxCall('employer','A','1');$('.empDiv').css('font-weight','normal');$('#A').css('font-weight','bold');" id="frame_industry" ><span class="text"  style="padding-right:10px">Employer</span></li> -->
+						<li style="width:auto;" onclick="$('#employerFilters').hide();toggleFrame('location');setCategory('LOCATION');makeAjaxCall('location','','');$('.pagination').hide();" id="frame_location"><span class="text" style="padding-right:10px">Location</span></li>
+					</ul>
+				</div>
+				<div class="frameTitle" style="margin-bottom:10px;"> <span class="text">Browse Jobs</span></div> 
+				
+				<div style="text-align: left;display: none;color: #C749A4;font-size:12px; font-family: 'Helvetica Neue Light'" id="employerFilters">
+					Display companies that start with:	
+								<br>
+								<div id="EmployerDiv">
+								</div>
+				</div>
+				
+				<div class="pagination" style="display:none;">
+						<br>
+								<div style="float:left">		
+									<img id="imgPagePrev" title="Previous Page " alt="Previous Page" class="imgPagePrev" src="jobs_files/previous1.png" style="margin-left:5px;margin-right:5px;" onclick="makeAjaxCall('employer',currentSubType,currentPageNumber-1);" width="15px">
+									<img id="imgPagePrevFaded" alt="Previous Page Hidden" title="Previous Page Hidden" class="imgPagePrevFaded" src="jobs_files/previous1inactive.png" style="margin-left:5px;margin-right:5px;display: none;" width="15px">
+								</div>
+								<div style="float:right">		
+									<img alt="Next Page" title="Next Page" id="imgPageNext" class="imgPageNext" src="jobs_files/next1.png" onclick="makeAjaxCall('employer',currentSubType,currentPageNumber+1);" width="15px">
+									<img alt="Next Page Hidden" title="Next Page Hidden" id="imgPageNextFaded" class="imgPageNextFaded" src="jobs_files/next1inactive.png" style="margin-left:5px;margin-right:5px;display: none;" width="15px">
+								</div>
+						<br>		
+				</div>
+				<ul id="frameBox_category" class="frameBox" style="display: block;"><li><form name="Netui_Form_0" id="Netui_Form_0" action="/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="formClass" method="post"><input name="{actionForm.checkValidRequest}" value="YES" type="hidden"><a style="font-size: 14px;" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Accounting%20%2F%20Auditing%20%2F%20Taxation" class="text newText" title="Accounting / Auditing / Taxation" onclick="anchor_submit_form('Netui_Form_0','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Accounting%20%2F%20Auditing%20%2F%20Taxation');return false;">Accounting / Auditing / Taxation&nbsp;</a></form><span style="font-size: 14px;" class="newText text">(1788)</span></li><li><form name="Netui_Form_1" id="Netui_Form_1" action="/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="formClass" method="post"><input name="{actionForm.checkValidRequest}" value="YES" type="hidden"><a style="font-size: 14px;" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=F%26B" class="text newText" title="F&amp;B" onclick="anchor_submit_form('Netui_Form_1','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=F%26B');return false;">F&amp;B&nbsp;</a></form><span style="font-size: 14px;" class="newText text">(1112)</span></li><li><form name="Netui_Form_2" id="Netui_Form_2" action="/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="formClass" method="post"><input name="{actionForm.checkValidRequest}" value="YES" type="hidden"><a style="font-size: 14px;" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Professional%20Services" class="text newText" title="Professional Services" onclick="anchor_submit_form('Netui_Form_2','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Professional%20Services');return false;">Professional Services&nbsp;</a></form><span style="font-size: 14px;" class="newText text">(619)</span></li><li><form name="Netui_Form_3" id="Netui_Form_3" action="/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="formClass" method="post"><input name="{actionForm.checkValidRequest}" value="YES" type="hidden"><a style="font-size: 14px;" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Admin%20%2F%20Secretarial" class="text newText" title="Admin / Secretarial" onclick="anchor_submit_form('Netui_Form_3','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Admin%20%2F%20Secretarial');return false;">Admin / Secretarial&nbsp;</a></form><span style="font-size: 14px;" class="newText text">(2155)</span></li><li><form name="Netui_Form_4" id="Netui_Form_4" action="/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="formClass" method="post"><input name="{actionForm.checkValidRequest}" value="YES" type="hidden"><a style="font-size: 14px;" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=General%20Management" class="text newText" title="General Management" onclick="anchor_submit_form('Netui_Form_4','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=General%20Management');return false;">General Management&nbsp;</a></form><span style="font-size: 14px;" class="newText text">(414)</span></li><li><form name="Netui_Form_5" id="Netui_Form_5" action="/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="formClass" method="post"><input name="{actionForm.checkValidRequest}" value="YES" type="hidden"><a style="font-size: 14px;" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Public%20%2F%20Civil%20Service" class="text newText" title="Public / Civil Service" onclick="anchor_submit_form('Netui_Form_5','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Public%20%2F%20Civil%20Service');return false;">Public / Civil Service&nbsp;</a></form><span style="font-size: 14px;" class="newText text">(381)</span></li><li><form name="Netui_Form_6" id="Netui_Form_6" action="/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="formClass" method="post"><input name="{actionForm.checkValidRequest}" value="YES" type="hidden"><a style="font-size: 14px;" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Advertising%20%2F%20Media" class="text newText" title="Advertising / Media" onclick="anchor_submit_form('Netui_Form_6','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Advertising%20%2F%20Media');return false;">Advertising / Media&nbsp;</a></form><span style="font-size: 14px;" class="newText text">(709)</span></li><li><form name="Netui_Form_7" id="Netui_Form_7" action="/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="formClass" method="post"><input name="{actionForm.checkValidRequest}" value="YES" type="hidden"><a style="font-size: 14px;" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=General%20Work" class="text newText" title="General Work" onclick="anchor_submit_form('Netui_Form_7','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=General%20Work');return false;">General Work&nbsp;</a></form><span style="font-size: 14px;" class="newText text">(618)</span></li><li><form name="Netui_Form_8" id="Netui_Form_8" action="/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="formClass" method="post"><input name="{actionForm.checkValidRequest}" value="YES" type="hidden"><a style="font-size: 14px;" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Purchasing%20%2F%20Merchandising" class="text newText" title="Purchasing / Merchandising" onclick="anchor_submit_form('Netui_Form_8','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Purchasing%20%2F%20Merchandising');return false;">Purchasing / Merchandising&nbsp;</a></form><span style="font-size: 14px;" class="newText text">(438)</span></li><li><form name="Netui_Form_9" id="Netui_Form_9" action="/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="formClass" method="post"><input name="{actionForm.checkValidRequest}" value="YES" type="hidden"><a style="font-size: 14px;" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Architecture%20%2F%20Interior%20Design" class="text newText" title="Architecture / Interior Design" onclick="anchor_submit_form('Netui_Form_9','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Architecture%20%2F%20Interior%20Design');return false;">Architecture / Interior Design&nbsp;</a></form><span style="font-size: 14px;" class="newText text">(446)</span></li><li><form name="Netui_Form_10" id="Netui_Form_10" action="/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="formClass" method="post"><input name="{actionForm.checkValidRequest}" value="YES" type="hidden"><a style="font-size: 14px;" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Healthcare%20%2F%20Pharmaceutical" class="text newText" title="Healthcare / Pharmaceutical" onclick="anchor_submit_form('Netui_Form_10','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Healthcare%20%2F%20Pharmaceutical');return false;">Healthcare / Pharmaceutical&nbsp;</a></form><span style="font-size: 14px;" class="newText text">(804)</span></li><li><form name="Netui_Form_11" id="Netui_Form_11" action="/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="formClass" method="post"><input name="{actionForm.checkValidRequest}" value="YES" type="hidden"><a style="font-size: 14px;" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Real%20Estate%20%2F%20Property%20Management" class="text newText" title="Real Estate / Property Management" onclick="anchor_submit_form('Netui_Form_11','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Real%20Estate%20%2F%20Property%20Management');return false;">Real Estate / Property Management&nbsp;</a></form><span style="font-size: 14px;" class="newText text">(365)</span></li><li><form name="Netui_Form_12" id="Netui_Form_12" action="/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="formClass" method="post"><input name="{actionForm.checkValidRequest}" value="YES" type="hidden"><a style="font-size: 14px;" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Banking%20and%20Finance" class="text newText" title="Banking and Finance" onclick="anchor_submit_form('Netui_Form_12','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Banking%20and%20Finance');return false;">Banking and Finance&nbsp;</a></form><span style="font-size: 14px;" class="newText text">(1995)</span></li><li><form name="Netui_Form_13" id="Netui_Form_13" action="/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="formClass" method="post"><input name="{actionForm.checkValidRequest}" value="YES" type="hidden"><a style="font-size: 14px;" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Hospitality" class="text newText" title="Hospitality" onclick="anchor_submit_form('Netui_Form_13','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Hospitality');return false;">Hospitality&nbsp;</a></form><span style="font-size: 14px;" class="newText text">(696)</span></li><li><form name="Netui_Form_14" id="Netui_Form_14" action="/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="formClass" method="post"><input name="{actionForm.checkValidRequest}" value="YES" type="hidden"><a style="font-size: 14px;" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Repair%20and%20Maintenance" class="text newText" title="Repair and Maintenance" onclick="anchor_submit_form('Netui_Form_14','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Repair%20and%20Maintenance');return false;">Repair and Maintenance&nbsp;</a></form><span style="font-size: 14px;" class="newText text">(599)</span></li><li><form name="Netui_Form_15" id="Netui_Form_15" action="/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="formClass" method="post"><input name="{actionForm.checkValidRequest}" value="YES" type="hidden"><a style="font-size: 14px;" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Building%20and%20Construction" class="text newText" title="Building and Construction" onclick="anchor_submit_form('Netui_Form_15','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Building%20and%20Construction');return false;">Building and Construction&nbsp;</a></form><span style="font-size: 14px;" class="newText text">(1862)</span></li><li><form name="Netui_Form_16" id="Netui_Form_16" action="/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="formClass" method="post"><input name="{actionForm.checkValidRequest}" value="YES" type="hidden"><a style="font-size: 14px;" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Human%20Resources" class="text newText" title="Human Resources" onclick="anchor_submit_form('Netui_Form_16','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Human%20Resources');return false;">Human Resources&nbsp;</a></form><span style="font-size: 14px;" class="newText text">(872)</span></li><li><form name="Netui_Form_17" id="Netui_Form_17" action="/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="formClass" method="post"><input name="{actionForm.checkValidRequest}" value="YES" type="hidden"><a style="font-size: 14px;" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Risk%20Management" class="text newText" title="Risk Management" onclick="anchor_submit_form('Netui_Form_17','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Risk%20Management');return false;">Risk Management&nbsp;</a></form><span style="font-size: 14px;" class="newText text">(164)</span></li><li><form name="Netui_Form_18" id="Netui_Form_18" action="/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="formClass" method="post"><input name="{actionForm.checkValidRequest}" value="YES" type="hidden"><a style="font-size: 14px;" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Consulting" class="text newText" title="Consulting" onclick="anchor_submit_form('Netui_Form_18','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Consulting');return false;">Consulting&nbsp;</a></form><span style="font-size: 14px;" class="newText text">(814)</span></li><li><form name="Netui_Form_19" id="Netui_Form_19" action="/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="formClass" method="post"><input name="{actionForm.checkValidRequest}" value="YES" type="hidden"><a style="font-size: 14px;" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Information%20Technology" class="text newText" title="Information Technology" onclick="anchor_submit_form('Netui_Form_19','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Information%20Technology');return false;">Information Technology&nbsp;</a></form><span style="font-size: 14px;" class="newText text">(5324)</span></li><li><form name="Netui_Form_20" id="Netui_Form_20" action="/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="formClass" method="post"><input name="{actionForm.checkValidRequest}" value="YES" type="hidden"><a style="font-size: 14px;" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Sales%20%2F%20Retail" class="text newText" title="Sales / Retail" onclick="anchor_submit_form('Netui_Form_20','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Sales%20%2F%20Retail');return false;">Sales / Retail&nbsp;</a></form><span style="font-size: 14px;" class="newText text">(2055)</span></li><li><form name="Netui_Form_21" id="Netui_Form_21" action="/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="formClass" method="post"><input name="{actionForm.checkValidRequest}" value="YES" type="hidden"><a style="font-size: 14px;" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Customer%20Service" class="text newText" title="Customer Service" onclick="anchor_submit_form('Netui_Form_21','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Customer%20Service');return false;">Customer Service&nbsp;</a></form><span style="font-size: 14px;" class="newText text">(1649)</span></li><li><form name="Netui_Form_22" id="Netui_Form_22" action="/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="formClass" method="post"><input name="{actionForm.checkValidRequest}" value="YES" type="hidden"><a style="font-size: 14px;" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Insurance" class="text newText" title="Insurance" onclick="anchor_submit_form('Netui_Form_22','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Insurance');return false;">Insurance&nbsp;</a></form><span style="font-size: 14px;" class="newText text">(448)</span></li><li><form name="Netui_Form_23" id="Netui_Form_23" action="/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="formClass" method="post"><input name="{actionForm.checkValidRequest}" value="YES" type="hidden"><a style="font-size: 14px;" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Sciences%20%2F%20Laboratory%20%2F%20R%26D" class="text newText" title="Sciences / Laboratory / R&amp;D" onclick="anchor_submit_form('Netui_Form_23','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Sciences%20%2F%20Laboratory%20%2F%20R%26D');return false;">Sciences / Laboratory / R&amp;D&nbsp;</a></form><span style="font-size: 14px;" class="newText text">(790)</span></li><li><form name="Netui_Form_24" id="Netui_Form_24" action="/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="formClass" method="post"><input name="{actionForm.checkValidRequest}" value="YES" type="hidden"><a style="font-size: 14px;" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Design" class="text newText" title="Design" onclick="anchor_submit_form('Netui_Form_24','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Design');return false;">Design&nbsp;</a></form><span style="font-size: 14px;" class="newText text">(555)</span></li><li><form name="Netui_Form_25" id="Netui_Form_25" action="/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="formClass" method="post"><input name="{actionForm.checkValidRequest}" value="YES" type="hidden"><a style="font-size: 14px;" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Legal" class="text newText" title="Legal" onclick="anchor_submit_form('Netui_Form_25','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Legal');return false;">Legal&nbsp;</a></form><span style="font-size: 14px;" class="newText text">(247)</span></li><li><form name="Netui_Form_26" id="Netui_Form_26" action="/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="formClass" method="post"><input name="{actionForm.checkValidRequest}" value="YES" type="hidden"><a style="font-size: 14px;" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Security%20and%20Investigation" class="text newText" title="Security and Investigation" onclick="anchor_submit_form('Netui_Form_26','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Security%20and%20Investigation');return false;">Security and Investigation&nbsp;</a></form><span style="font-size: 14px;" class="newText text">(197)</span></li><li><form name="Netui_Form_27" id="Netui_Form_27" action="/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="formClass" method="post"><input name="{actionForm.checkValidRequest}" value="YES" type="hidden"><a style="font-size: 14px;" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Education%20and%20Training" class="text newText" title="Education and Training" onclick="anchor_submit_form('Netui_Form_27','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Education%20and%20Training');return false;">Education and Training&nbsp;</a></form><span style="font-size: 14px;" class="newText text">(800)</span></li><li><form name="Netui_Form_28" id="Netui_Form_28" action="/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="formClass" method="post"><input name="{actionForm.checkValidRequest}" value="YES" type="hidden"><a style="font-size: 14px;" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Logistics%20%2F%20Supply%20Chain" class="text newText" title="Logistics / Supply Chain" onclick="anchor_submit_form('Netui_Form_28','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Logistics%20%2F%20Supply%20Chain');return false;">Logistics / Supply Chain&nbsp;</a></form><span style="font-size: 14px;" class="newText text">(1374)</span></li><li><form name="Netui_Form_29" id="Netui_Form_29" action="/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="formClass" method="post"><input name="{actionForm.checkValidRequest}" value="YES" type="hidden"><a style="font-size: 14px;" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Social%20Services" class="text newText" title="Social Services" onclick="anchor_submit_form('Netui_Form_29','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Social%20Services');return false;">Social Services&nbsp;</a></form><span style="font-size: 14px;" class="newText text">(196)</span></li><li><form name="Netui_Form_30" id="Netui_Form_30" action="/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="formClass" method="post"><input name="{actionForm.checkValidRequest}" value="YES" type="hidden"><a style="font-size: 14px;" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Engineering" class="text newText" title="Engineering" onclick="anchor_submit_form('Netui_Form_30','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Engineering');return false;">Engineering&nbsp;</a></form><span style="font-size: 14px;" class="newText text">(3782)</span></li><li><form name="Netui_Form_31" id="Netui_Form_31" action="/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="formClass" method="post"><input name="{actionForm.checkValidRequest}" value="YES" type="hidden"><a style="font-size: 14px;" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Manufacturing" class="text newText" title="Manufacturing" onclick="anchor_submit_form('Netui_Form_31','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Manufacturing');return false;">Manufacturing&nbsp;</a></form><span style="font-size: 14px;" class="newText text">(1153)</span></li><li><form name="Netui_Form_32" id="Netui_Form_32" action="/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="formClass" method="post"><input name="{actionForm.checkValidRequest}" value="YES" type="hidden"><a style="font-size: 14px;" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Telecommunications" class="text newText" title="Telecommunications" onclick="anchor_submit_form('Netui_Form_32','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Telecommunications');return false;">Telecommunications&nbsp;</a></form><span style="font-size: 14px;" class="newText text">(508)</span></li><li><form name="Netui_Form_33" id="Netui_Form_33" action="/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="formClass" method="post"><input name="{actionForm.checkValidRequest}" value="YES" type="hidden"><a style="font-size: 14px;" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Entertainment" class="text newText" title="Entertainment" onclick="anchor_submit_form('Netui_Form_33','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Entertainment');return false;">Entertainment&nbsp;</a></form><span style="font-size: 14px;" class="newText text">(222)</span></li><li><form name="Netui_Form_34" id="Netui_Form_34" action="/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="formClass" method="post"><input name="{actionForm.checkValidRequest}" value="YES" type="hidden"><a style="font-size: 14px;" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Marketing%20%2F%20Public%20Relations" class="text newText" title="Marketing / Public Relations" onclick="anchor_submit_form('Netui_Form_34','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Marketing%20%2F%20Public%20Relations');return false;">Marketing / Public Relations&nbsp;</a></form><span style="font-size: 14px;" class="newText text">(1182)</span></li><li><form name="Netui_Form_35" id="Netui_Form_35" action="/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="formClass" method="post"><input name="{actionForm.checkValidRequest}" value="YES" type="hidden"><a style="font-size: 14px;" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Travel%20%2F%20Tourism" class="text newText" title="Travel / Tourism" onclick="anchor_submit_form('Netui_Form_35','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Travel%20%2F%20Tourism');return false;">Travel / Tourism&nbsp;</a></form><span style="font-size: 14px;" class="newText text">(294)</span></li><li><form name="Netui_Form_36" id="Netui_Form_36" action="/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="formClass" method="post"><input name="{actionForm.checkValidRequest}" value="YES" type="hidden"><a style="font-size: 14px;" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Environment%20%2F%20Health" class="text newText" title="Environment / Health" onclick="anchor_submit_form('Netui_Form_36','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Environment%20%2F%20Health');return false;">Environment / Health&nbsp;</a></form><span style="font-size: 14px;" class="newText text">(212)</span></li><li><form name="Netui_Form_37" id="Netui_Form_37" action="/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="formClass" method="post"><input name="{actionForm.checkValidRequest}" value="YES" type="hidden"><a style="font-size: 14px;" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Medical%20%2F%20Therapy%20Services" class="text newText" title="Medical / Therapy Services" onclick="anchor_submit_form('Netui_Form_37','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Medical%20%2F%20Therapy%20Services');return false;">Medical / Therapy Services&nbsp;</a></form><span style="font-size: 14px;" class="newText text">(195)</span></li><li><form name="Netui_Form_38" id="Netui_Form_38" action="/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="formClass" method="post"><input name="{actionForm.checkValidRequest}" value="YES" type="hidden"><a style="font-size: 14px;" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Others" class="text newText" title="Others" onclick="anchor_submit_form('Netui_Form_38','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Others');return false;">Others&nbsp;</a></form><span style="font-size: 14px;" class="newText text">(2416)</span></li><li><form name="Netui_Form_39" id="Netui_Form_39" action="/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="formClass" method="post"><input name="{actionForm.checkValidRequest}" value="YES" type="hidden"><a style="font-size: 14px;" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Events%20%2F%20Promotions" class="text newText" title="Events / Promotions" onclick="anchor_submit_form('Netui_Form_39','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Events%20%2F%20Promotions');return false;">Events / Promotions&nbsp;</a></form><span style="font-size: 14px;" class="newText text">(382)</span></li><li><form name="Netui_Form_40" id="Netui_Form_40" action="/ICMSPortal/portlets/JobBankHandler/SearchResult.do" class="formClass" method="post"><input name="{actionForm.checkValidRequest}" value="YES" type="hidden"><a style="font-size: 14px;" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Personal%20Care%20%2F%20Beauty" class="text newText" title="Personal Care / Beauty" onclick="anchor_submit_form('Netui_Form_40','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function=Personal%20Care%20%2F%20Beauty');return false;">Personal Care / Beauty&nbsp;</a></form><span style="font-size: 14px;" class="newText text">(239)</span></li></ul>
+				<ul style="display: none;" id="frameBox_industry" class="frameBox"></ul>
+				<ul style="display: none;" id="frameBox_location" class="frameBox"></ul>
+				<div class="clear"></div>
+				<div class="pagination" style="display:none;">
+						<br>
+								<div style="float:left">		
+									<img id="imgPagePrev" title="Previous Page " alt="Previous Page" class="imgPagePrev" src="jobs_files/previous1.png" style="margin-left:5px;margin-right:5px;" onclick="makeAjaxCall('employer',currentSubType,currentPageNumber-1);" width="15px">
+									<img id="imgPagePrevFaded" alt="Previous Page Hidden" title="Previous Page Hidden" class="imgPagePrevFaded" src="jobs_files/previous1inactive.png" style="margin-left:5px;margin-right:5px;display: none;" width="15px">
+								</div>
+								<div style="float:right">		
+									<img alt="Next Page" title="Next Page" id="imgPageNext" class="imgPageNext" src="jobs_files/next1.png" onclick="makeAjaxCall('employer',currentSubType,currentPageNumber+1);" width="15px">
+									<img alt="Next Page Hidden" title="Next Page Hidden" id="imgPageNextFaded" class="imgPageNextFaded" src="jobs_files/next1inactive.png" style="margin-left:5px;margin-right:5px;display: none;" width="15px">
+								</div>
+						<br>		
+				</div>
+				
+				
+				<div id="loading" align="center"></div>
+								
+			</div> 
+			<div class="clear"></div>
+			<div class="columns3">
+				<a href="http://www.wda.gov.sg/content/wdawebsite/L204-CourseDirectory.html" target="_blank">
+					<div class="colLeft" style="background-image:url('/ICMSPortal/resources/JobsBank2/img/jobsbank banners-01.jpg');">
+					</div>
+				</a>
+				<a href="http://www.wda.gov.sg/content/wdawebsite/L210-012EventCalendar.html?parent=topnavevents&amp;search=all&amp;pageno=1" target="_blank">
+					<div class="colCenter" style="background-image:url('/ICMSPortal/resources/JobsBank2/img/jobsbank banners-02.jpg');">
+					</div>
+				</a>
+				<a href="http://www.wda.gov.sg/content/wdawebsite/L101-ForIndividuals/L704A-CareerLibrary/L704Ai-CareerCentreServices.html" target="_blank">
+					<div class="colRight" style="background-image:url('/ICMSPortal/resources/JobsBank2/img/WDA_Career_Services.png');">
+					</div>
+				</a>
+			</div>
+			
+		</div>
+	</div>
+	<div id="myCustom">
+	</div>
+	<div class="clear bottom">&nbsp;</div>
+	
+	 
+ 
+ 
+
+<br>
+<div class="footer">
+		<div class="content" id="footer">
+			<span class="title">Quick Links</span>
+			<div class="arrowButton" id="arrow">&nbsp;</div>
+		</div>
+	
+		<div class="footerBox" id="quicklinkBox">
+			<div class="content">
+				<table style="border-style:none">
+					<tbody><tr>
+					<td style="vertical-align:top">
+							<ul>
+								<li><a class="text" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/Home.do" title="HOME"><strong style="font-weight:bold;">HOME</strong></a></li>
+								<li>&nbsp;</li>
+								<li><a class="text" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/EmployerDetails.jsp" title="FOR EMPLOYER"><strong>FOR EMPLOYERS</strong></a></li>
+								<li><a class="text" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/employer.jsp" title="Register/Login">Register/Login</a></li>
+								<li><a class="text" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/AboutJobsBank/TermsOfUse.jsp" title="Terms of Use">Terms of Use</a></li>
+								<li><a class="text" href="https://www.jobsbank.gov.sg/ICMSPortal/resources/JobsBank2/userGuides/JobsBank_UserGuide_Employer.pdf" target="_blank" title="User Guides">User Guides</a></li>
+								<li><a class="text" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/AboutJobsBank/PrivacyPolicy.jsp" title="User Guides">Privacy Policy</a></li>
+								<li><a class="text" href="http://www.tafep.sg/fair-employment-practices" target="_blank" title="TAFEP's Guidelines on Fair">TAFEP's Guidelines on Fair</a></li>
+								<li><a class="text" href="http://www.tafep.sg/fair-employment-practices" target="_blank" title="Employment Practices">Employment Practices</a></li>
+								<li><a class="text" href="http://www.mom.gov.sg/employment-practices/fair-consideration-framework" target="_blank" title="MOM's Fair Consideration Framework">MOM's Fair Consideration Framework</a></li>
+							</ul>
+						</td>
+						<td style="vertical-align:top">
+							<ul>
+								<li><a class="text" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/IndividualDetails.jsp" title="FOR INDIVIDUALS"><strong>FOR INDIVIDUALS</strong></a></li>
+								<li><a class="text" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/individual.jsp" title="Register/Login">Register/Login</a></li>
+								<li><a class="text" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/AboutJobsBank/TermsOfUse.jsp" title="Terms of Use">Terms of Use</a></li>
+								<li><a class="text" href="https://www.jobsbank.gov.sg/ICMSPortal/resources/JobsBank2/userGuides/JobsBank_UserGuide_Individual.pdf" target="_blank" title="User Guides">User Guides</a></li>
+								<li><a class="text" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/AboutJobsBank/PrivacyPolicy.jsp" title="User Guides">Privacy Policy</a></li>
+								<li><a class="text" href="http://www.wda.gov.sg/content/wdawebsite/L210-012EventCalendar.html?search=calendar" target="_blank" title="Upcoming Recruitment Events">Upcoming Recruitment Events</a></li>
+								<li><a class="text" href="http://www.wda.gov.sg/content/wdawebsite/L101-ForIndividuals/L704A-CareerLibrary/L704Ai-CareerCentreServices.html" target="_blank" title="WDA Career Center Services">WDA Career Center Services</a></li>
+							</ul>
+						</td>
+						<td style="vertical-align:top">
+							<ul>
+							<li><a href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/AboutJobsBank/AboutJobsBank.jsp" title="ABOUT JOBS BANK"><strong>ABOUT JOBS BANK</strong></a></li>
+								<li><a class="text" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/AboutJobsBank/TermsOfUse.jsp" title="Terms of Use">Terms of Use</a></li>
+								<li><a class="text" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/AboutJobsBank/FAQ.jsp" title="FAQ/User Guides">FAQ/User Guides</a></li>
+								<li><a class="text" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/AboutJobsBank/ContactInfo.jsp" title="Contact Us">Contact Us</a></li>
+								<li><a class="text" href="https://www.jobsbank.gov.sg/ICMSPortal/portlets/JobBankHandler/AboutJobsBank/PrivacyPolicy.jsp" title="Privacy Policy">Privacy Policy</a></li>
+								<li>&nbsp;</li>
+								<li><a class="text" href="#" onclick="return false;" title="USEFUL LINKS"><strong>USEFUL LINKS</strong></a></li>
+								<li><a class="text" href="http://www.mom.gov.sg/" target="_blank" title="Ministry of Manpower">Ministry of Manpower</a></li>
+								<li><a class="text" href="http://www.tafep.sg/" target="_blank" title="TAFEP">TAFEP</a></li>
+								<li><a class="text" href="http://www.iras.gov.sg/" target="_blank" title="IRAS">IRAS</a></li>
+							</ul>
+						</td>
+						<td class="socialBox" style="vertical-align:top;width:380px;">
+							<ul>
+								<li class="text">Follow us on</li>
+								<li>
+									<ul>
+										<li><a href="http://www.facebook.com/wdasingapore" title="facebook" target="_blank"><img alt="facebook" title="facebook" src="jobs_files/icon-social-media-fb.png"></a></li>
+										<li><a href="https://twitter.com/WDASingapore" title="twitter" target="_blank"><img alt="twitter" title="twitter" src="jobs_files/icon-social-media-tw.png"></a></li>
+										<li><a href="http://wdasingapore.tumblr.com/" title="tumblr" target="_blank"><img alt="tumblr" title="tumblr" src="jobs_files/icon-social-media-tumblr.png"></a></li>
+										<li><a href="http://www.youtube.com/user/WDAsingapore" title="youtube" target="_blank"><img alt="youtube" title="youtube" src="jobs_files/icon-social-media-yt.png"></a></li>
+									</ul>
+								</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3"><img alt="Footer Image" title="Footer Image" src="jobs_files/footer-icons.png"></td>
+						<td><a href="http://www.wda.gov.sg/" target="_blank" title="Singapore Workforce Development Agency"><img alt="Singapore Workforce Development Agency" title="Singapore Workforce Development Agency" src="jobs_files/logo-wda.png"></a>
+							<div class="disclaimer"><label class="text">Copyright © 2014 Singapore Workforce Development Agency. All rights reserved. <br> <!-- removed this code from the line  for="Disclaimer"  with reason W3C validation fails and causes of error: The for attribute of the label element must refer to a form control. -->
+							Best viewed with Internet Explorer V8 (1024 x 768 resolution)</label></div></td>
+					</tr>
+				</tbody></table>
+				<div class="clear">&nbsp;</div>
+			</div>
+		</div>
+</div>
+
+
+<script type="text/javascript">
+$("#footer").click(function(){  
+	if ($("#quicklinkBox").is(":visible")){
+		$("#footer #arrow").css("background-image", "url(/ICMSPortal/resources/JobsBank2/img/icon-arrow-up.png)");  
+	} else {
+		$("#footer #arrow").css("background-image", "url(/ICMSPortal/resources/JobsBank2/img/icon-arrow-down.png)");  
+	}
+	$("#quicklinkBox").slideToggle("fast","swing");
+});
+
+function toggleFrame(frameName){
+	$(".frameTabs li").removeClass('selected');
+	$(".frameTabs #frame_"+frameName).addClass('selected');
+	
+	
+	$(".frameBrowseJobs .frameBox").hide();
+	$(".frameBrowseJobs #frameBox_"+frameName).show();
+	
+}
+ function noRedirect(){
+	return false;
+}
+
+</script>
+	
+</div>
+<script> 
+
+
+function setCategory(selectedCategory){
+	document.getElementById("selectedCategory").value = selectedCategory;
+}
+
+function setEmployer(selectedEmployerCat){
+	document.getElementById("selectedEmpCategory").value = selectedEmployerCat;
+}
+
+function setEmployer(selectedIndex){
+	document.getElementById("selectedIndex").value = selectedIndex;
+}
+window.onload = function() {
+	if(document.getElementById("selectedCategory")!=null || document.getElementById("selectedCategory").value !="" ){
+		if(document.getElementById("selectedCategory").value == 'EMPLOYER'){
+			if(document.getElementById("selectedEmpCategory")!=null){
+				$('#employerFilters').show();
+				toggleFrame('industry');
+				loadAlphabets();
+				setCategory('EMPLOYER');
+				var index = document.getElementById("selectedIndex").value;
+				makeAjaxCall('employer',''+$('#selectedEmpCategory').val(),index);
+				$('.pagination').show();
+			}else 
+				$('#frame_industry').click();
+		}else if(document.getElementById("selectedCategory").value == 'LOCATION'){
+			$('#frame_location').click();
+		}else
+			$('#frame_category').click();
+		
+	}else
+		$('#frame_category').click();
+};
+</script>
+	
+	 
+	 
+	 <script>
+
+	 var selectedMenuIcon = "nav-icon-home";
+
+	 $(".navContentLeft a img").each(function(){
+	 	var src = $(this).attr("data-img");
+	 	if(selectedMenuIcon == src)
+	 	$(this).attr("src", "/ICMSPortal/resources/JobsBank2/img/" + src + "_h.jpg");
+	 	else
+	 	$(this).attr("src", "/ICMSPortal/resources/JobsBank2/img/" + src + ".jpg");
+	 }); 
+
+	 $(".navContentLeft a img").hover(function(){
+	 	var src = $(this).attr("data-img");
+	 	if (src){
+	 		if(src != selectedMenuIcon)
+	 		$(this).attr("src", "/ICMSPortal/resources/JobsBank2/img/" + src + "_h.jpg");
+	 	}
+	 }, function(){
+	 	var src = $(this).attr("data-img");
+	 	if (src){
+	 		if(src != selectedMenuIcon)
+	 		$(this).attr("src", "/ICMSPortal/resources/JobsBank2/img/" + src + ".jpg");
+	 	}
+	 });
+	 </script>
+	 <!--Ajax calls are made from here-->
+	 
+
+	 <script type="text/javascript">
+	 
+	var formIndex = 0;
+	
+	function makeAjaxCall(type, Subtype, index){
+			
+			$("#frameBox_industry").html('');
+			$("#frameBox_category").html('');
+			$("#frameBox_location").html('');
+			//alert("coming into ajax");
+			 $('.pagination').hide();	
+			  $('#loading').html('<br><img src=\"/ICMSPortal/resources/JobsBank2/img/JobBankLoadingGrey.gif\"/>');
+			 $.ajax({ // ajax call starts
+	           url: '/ICMSPortal/portlets/JobBankHandler/loadCategoryValues.do', // JQuery loads serverside.php
+	           data: {
+					    "funcType":type ,
+					    "funcSubType":Subtype, 
+					    "index":index
+					 },
+	           dataType: 'json', // Choosing a JSON datatype
+	           success: function(data)// Variable data contains the data we get from serverside
+	           {	 
+	          	    if(type=="category")	
+	           			 setCategoryData(data);
+	           		else if(type=="location")
+	           			 setLocationData(data);
+	           		else if(type=="employer"){
+	           			 setEmployerData(data,Subtype,index);
+	           		}
+			   },
+			   error: function() { 
+			   		$('#loading').html('');
+			        //alert("failure"); 
+			    } 
+		   	 	
+	       });
+	       return false; // keeps the page from not refreshing 
+	   }
+	function setCategoryData(data){
+		$('#loading').html('');
+		var listSize = data.length;
+		 var myVal = '';
+		var i = 0;
+		for( i=0 ; i<data.CategoryVal.length;i++ ){
+			searchKey = rfc3986EncodeURIComponent(data.CategoryVal[i].key);
+			if(data.CategoryVal[i].value != "0"){ 
+				 myVal += "<li>";
+				 myVal += "<form name=\"Netui_Form_"+formIndex+"\" id=\"Netui_Form_"+formIndex+"\" action=\"/ICMSPortal/portlets/JobBankHandler/SearchResult.do\" class=\"formClass\" method=\"post\">";
+				 myVal += "<input type=\"hidden\" name=\"{actionForm.checkValidRequest}\" value=\"YES\">" ;
+				 myVal += "<a href=\"/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function="+searchKey+"\" class=\"text newText\" title=\""+data.CategoryVal[i].key+"\" onclick=\"anchor_submit_form('Netui_Form_"+formIndex+"','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Function="+searchKey+"');return false;\">"+data.CategoryVal[i].key+"&nbsp;</a>";
+				 myVal += "</form>";
+				 formIndex++;
+				 myVal += "<span class=\"newText text\">("+data.CategoryVal[i].value+")</span>";
+				  myVal += "</li>";
+			}
+			 else{
+			 	 myVal += "<li>";
+				 myVal +="<span class=\"keyDiv text newText\" title=\""+data.CategoryVal[i].key+"\">"+data.CategoryVal[i].key+"&nbsp;</span>";
+				 myVal += "</li>";	
+			}
+		}
+		$("#frameBox_industry").html('');
+		$("#frameBox_location").html('');
+		$("#frameBox_category").html('');
+			$("#frameBox_category").html(''+ myVal);
+			$(".newText").css('font-size','+='+fontSizeCount+'px', 'important');
+	}
+	
+	function setLocationData(data){
+		$('#loading').html('');
+		var listSize = data.length;
+		 var myVal = '';
+		var i = 0;
+		var searchKey ='';
+			 
+		for( i=0 ; i<data.CategoryVal.length;i++ ){
+			
+			 if(data.CategoryVal[i].key[0]=='D'){
+					searchKey = data.CategoryVal[i].key.substring(4);
+			 }else
+			 	searchKey = data.CategoryVal[i].key
+
+			 	searchKey = rfc3986EncodeURIComponent(searchKey);
+			
+			 myVal += "<li>";
+				if(data.CategoryVal[i].value != "0"){
+						 myVal += "<form name=\"Netui_Form_"+formIndex+"\" id=\"Netui_Form_"+formIndex+"\" action=\"/ICMSPortal/portlets/JobBankHandler/SearchResult.do\" class=\"formClass\" method=\"post\">";
+						 myVal += "<input type=\"hidden\" name=\"{actionForm.checkValidRequest}\" value=\"YES\">" ;
+						 myVal += "<a href=\"/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=LOCATION&amp;aTabFunction=aTabFunction&amp;Location="+searchKey+"\" class=\"text newText\" title=\""+data.CategoryVal[i].key+"\" onclick=\"anchor_submit_form('Netui_Form_"+formIndex+"','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=CATEGORY&amp;aTabFunction=aTabFunction&amp;Location="+searchKey+"');return false;\">"+data.CategoryVal[i].key+"&nbsp;</a>";
+						 myVal += "</form>";
+						 formIndex++;
+						 myVal += "<span class=\"newText text\">("+data.CategoryVal[i].value+")</span>";
+					 }
+				else
+					 myVal +="<span class=\"keyDiv text newText\" title=\""+data.CategoryVal[i].key+"\">"+data.CategoryVal[i].key+"&nbsp;</span>";
+		    myVal += "</li>";
+		}
+		
+			$("#frameBox_industry").html('');
+			$("#frameBox_location").html('');
+			$("#frameBox_category").html('');
+			$("#frameBox_location").html(''+ myVal);
+			$(".newText").css('font-size','+='+fontSizeCount+'px', 'important');
+			
+	}
+	
+	function setEmployerData(data,Subtype,index){
+		$('#loading').html('');
+		var listSize = data.length;
+		 var myVal = '';
+		var i = 0;
+		var searchKey ='';
+		//alert("Sub type"+Subtype);
+		//alert("Sub type"+index);
+		
+		//alert("coming here");
+		for( i=0 ; i<data.CategoryVal.length;i++ ){
+			
+			searchKey = rfc3986EncodeURIComponent(data.CategoryVal[i].key);
+			 
+			 myVal += "<li>";
+				if(data.CategoryVal[i].value != "0"){
+						 myVal += "<form name=\"Netui_Form_"+formIndex+"\" id=\"Netui_Form_"+formIndex+"\" action=\"/ICMSPortal/portlets/JobBankHandler/SearchResult.do\" class=\"formClass\" method=\"post\">";
+						 myVal += "<input type=\"hidden\" name=\"{actionForm.checkValidRequest}\" value=\"YES\">" ;
+						 myVal += "<a href=\"/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=EMPLOYER&amp;tab1=aTabEmployer&amp;Employer="+searchKey+"\" class=\"text newText\" title=\""+data.CategoryVal[i].key+"\" onclick=\"anchor_submit_form('Netui_Form_"+formIndex+"','/ICMSPortal/portlets/JobBankHandler/SearchResult.do?tabSelected=EMPLOYER&amp;tab1=aTabEmployer&amp;Employer="+searchKey+"');return false;\">"+data.CategoryVal[i].key+"&nbsp;</a>";
+						 myVal += "</form>";
+						 formIndex++;
+						 myVal += "<span class=\"newText text\">("+data.CategoryVal[i].value+")</span>";
+				}
+				else
+						 myVal +="<span class=\"keyDiv text newText\" title=\""+data.CategoryVal[i].key+"\">"+data.CategoryVal[i].key+"&nbsp;</span>";
+						 myVal += "</li>";
+		}
+		$('.pagination').show();
+		
+		var employerLength = parseInt(300);
+		if(data.EmployerVal[0].totalPages <= 1){
+			if(data.CategoryVal.length == 0)
+				myVal += "There are no employers in this category";
+			$('.pagination').hide();
+		}
+		$("#frameBox_industry").html('');
+		$("#frameBox_location").html('');
+		$("#frameBox_category").html('');
+		$("#frameBox_industry").html(''+ myVal);
+		$(".newText").css('font-size','+='+fontSizeCount+'px', 'important');
+		setPageImg(data.EmployerVal[0].currentPage, data.EmployerVal[0].totalPages);
+		currentSubType=Subtype;
+		//alert('Subtype'+Subtype);
+		
+	}
+	 </script>
+	 <script>
+	 	/*script to load the alphabets*/
+	 var emplyrDiv = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N"
+	 				,"O","P","Q","R","S","T","U","V","W","X","Y","Z","0-9"] ;
+	 				
+	 	function loadAlphabets(){
+	 		var i = 0;
+	 		var myVal = "";
+	 		//alert("here" +emplyrDiv.length);
+	 		for(i = 0;i<emplyrDiv.length;i++){
+	 			myVal += "[<span id=\""+emplyrDiv[i]+"\" onclick=\"makeAjaxCall('employer','"+emplyrDiv[i]+"','1');$('.empDiv').css('font-weight','normal');$(this).css('font-weight','bold');$('#selectedEmpCategory').val($(this).text());$('.pagination').hide();\" style=\"cursor:pointer\"  onMouseOut=\"$(this).css('color','#C749A4');\" class=\"empDiv newCat text\" onmouseover=\"$(this).css('color','#000');\">&nbsp;"+emplyrDiv[i]+"&nbsp;</span>]";
+			}	
+			$("#EmployerDiv").html('');
+			$("#EmployerDiv").html(''+myVal);
+			$('#'+ $.trim($('#selectedEmpCategory').val())).css('font-weight','bold');
+
+			$(".newCat").css('font-size',12+fontSizeCount+'px', 'important');
+	 	}
+	 	
+	 	
+	 </script>
+	 <script type="text/javascript">
+		var currentPageNumber = 1;  
+		var currentSubType="";
+
+		function setPageImg(currentPage,totalPage) {
+			currentPageNumber = parseInt(currentPage);
+			$('#selectedIndex').val(''+currentPageNumber);
+			if(parseInt(currentPage) <= 1)
+			{
+			
+				$('.imgPagePrev').css('display','none');
+				$('.imgPagePrevFaded').css('display','');
+			}
+			else
+			{
+			
+				$('.imgPagePrev').css('display','');
+				$('.imgPagePrevFaded').css('display','none');
+			}
+			
+			if(parseInt(currentPage) >= parseInt(totalPage) )
+			{
+				$('.imgPageNext').css('display','none');
+				$('.imgPageNextFaded').css('display','');
+			}
+			else
+			{
+				$('.imgPageNext').css('display','');
+				$('.imgPageNextFaded').css('display','none');
+			}	
+			
+			
+		};
+
+		function rfc3986EncodeURIComponent (str) {  
+		    return encodeURIComponent(str).replace(/[!'()*]/g, escape);  
+		}
+
+		document.getElementById('search').value="Enter job title";	
+		function placeHold()
+		 {
+			 var v1 = "Enter job title";
+			 var val1 =document.getElementById('search').value; // $("#Search_Controller_14.searchKeyWord").val();
+			 
+						 	if( val1.length > 0 && val1 == v1 )
+							{
+						 		 document.getElementById('search').value=''; 	//$("#Search_Controller_14.searchKeyWord").val("");
+						 	}
+				 	
+			return true;
+	 	 }
+	function placeHoldBlur()
+	 {
+		 var v1 = "Enter job title";
+		 var val1 =  document.getElementById('search').value;
+		 
+		 
+		 
+		
+					 	if( val1.length == 0  )
+						{
+					 		 document.getElementById('search').value="Enter job title";//$("#Search_Controller_14.searchKeyWord").val("Enter keyword here");
+					 	}
+			 	
+				 return true;
+
+	 }
+	function CheckVal(){
+		 var v1 = "Enter job title";
+		 var val1 =  document.getElementById('search').value;
+		 if(val1==v1)
+			 document.getElementById('search').value="";
+		
+	}
+			
+	</script>
+	
+	
+	 
+
+ 
+</body></html>
